@@ -27,9 +27,9 @@ h1, h2, h3 {
 // Background gradient
 .navbar, .home-callout {
   // Gradient provided by  @_ighosh at uiGradients.com
-  background: #30E8BF; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #30E8BF , #FF8235); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #30E8BF , #FF8235); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #FF8235; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #30E8BF , #FF8235); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #30E8BF , #FF8235); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
 
@@ -58,6 +58,19 @@ h1, h2, h3 {
   border: 2px solid white;
   &:hover, &:focus {
     background-color: #FF8235;
+  }
+}
+
+#login-button {
+  color: #333;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  &:hover, &:focus {
+    background-color: #e6e6e6;
+    border-color: #adadad;
   }
 }
 
