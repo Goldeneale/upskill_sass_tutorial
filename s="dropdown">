@@ -1,0 +1,50 @@
+[1mdiff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb[m
+[1mindex a5678b7..bab53d2 100644[m
+[1m--- a/app/views/layouts/application.html.erb[m
+[1m+++ b/app/views/layouts/application.html.erb[m
+[36m@@ -27,22 +27,25 @@[m
+         </div>[m
+         <div class="collapse navbar-collapse" id="main-nav-collapse">[m
+           <div class= "nav navbar-nav navbar-right">[m
+[31m-            <%= link_to "Log In", new_user_session_path, class: 'btn btn-default navbar-btn' %>[m
+[31m-            <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-default navbar-btn' %>[m
+[32m+[m[32m            <% if user_signed_in? %>[m
+[32m+[m[32m              <li class="dropdown">[m
+[32m+[m[32m                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>[m
+[32m+[m[32m                <ul class="dropdown-menu">[m
+[32m+[m[32m                  <li><%= link_to "Edit Password", edit_user_password_path %></li>[m
+[32m+[m[32m                  <li><%= link_to "Change Settings", edit_user_registration_path %></li>[m
+[32m+[m[32m                  <li role="separator" class="divider"></li>[m
+[32m+[m[32m                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>[m
+[32m+[m[32m                  <li role="separator" class="divider"></li>[m
+[32m+[m[32m                  <li><%= link_to "Delete Account", cancel_user_registration_path %></li>[m
+[32m+[m[32m                </ul>[m
+[32m+[m[32m              </li>[m
+[32m+[m[32m            <% else %>[m
+[32m+[m[32m              <%= link_to "Log In", new_user_session_path, class: 'btn btn-default navbar-btn' %>[m
+[32m+[m[32m              <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-default navbar-btn' %>[m
+           </div>[m
+           <ul class="nav navbar-nav navbar-right">[m
+             <li><%= link_to "About", about_path %></li>[m
+             <li><%= link_to "Contact Us", new_contact_path %></li>[m
+[31m-            <!-- [m
+[31m-            <li class="dropdown">[m
+[31m-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>[m
+[31m-              <ul class="dropdown-menu">[m
+[31m-                <li><%= link_to "Log In", new_user_session_path %></li>[m
+[31m-                <li role="separator" class="divider"></li>[m
+[31m-                <li><%= link_to "Sign Up", new_user_registration_path %></li>[m
+[31m-              </ul>[m
+[31m-            </li>[m
+[31m-            -->[m
+           </ul>[m
+         </div><!-- /.navbar-collapse -->[m
+       </div>[m
+[36m@@ -55,4 +58,5 @@[m
+       <%= yield %>[m
+ [m
+   </body>[m
+[31m-</html>[m
+[32m+[m[41m  [m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
