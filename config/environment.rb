@@ -12,4 +12,4 @@ ActionMailer::Base.smtp_settings = {
  :domain            => 'https://ancient-dusk-25732.herokuapp.com/',
  :authentication    => :plain,
 }
-ActionMailer:Base.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :smtp
