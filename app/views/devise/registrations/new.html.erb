@@ -6,7 +6,7 @@
           <h2>Pro Account Sign Up Form</h2>
         <% else %>
           <h1>Basic Account Sign Up Form</h2>
-          
+        <% end %>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
           
@@ -34,7 +34,6 @@
           <% end %>
           
           <%= render "devise/shared/links" %>
-        <% end %>
       </div>
     </div>
   </div>
