@@ -2,7 +2,7 @@
 $(document).on('turbolinks:load', function(){
     
     var theForm = $('#pro_form');
-    var submitBtn = $('#form-submit-btn');
+    var submitBtn = $('#form-signup-btn');
     
     // Set Stripe public key
     Stripe.setPublishableKey( $('meta[name="stripe-key"]').attr('content') );
@@ -25,19 +25,19 @@ $(document).on('turbolinks:load', function(){
         //Validate card number
         if(!Stripe.card.validateCardNumber(ccNum)) {
             error = true;
-            alert('The credit card number appears to be invalid.')
+            alert('The credit card number appears to be invalid.');
         }
         
         //Validate CVC number
         if(!Stripe.card.validateCVC(cvcNum)) {
             error = true;
-            alert('The security code appears to be invalid.')
+            alert('The security code appears to be invalid.');
         }
         
         //Validate expiration
         if(!Stripe.card.validateExpiry(expMonth, expYear)) {
             error = true;
-            alert('The expiration date appears to be invalid.')
+            alert('The expiration date appears to be invalid.');
         }
             
         //Send the card info to Stripe
